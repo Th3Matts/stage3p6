@@ -190,7 +190,10 @@ footer{
   justify-content: center;
 }
 
-/*
+footer a{
+  color: var(--color-base-gray-900);
+}
+
 @media (max-height: 1080px) {
   
   .container{
@@ -208,7 +211,27 @@ footer{
   }
   
   .gallery{
-    margin-top: 1rem;
+    margin-top: 0.5rem;
   }
 }
-*/
+
+@media (max-width: 768px) {
+
+  header a,
+  .gallery h2{
+    font-size: 1.5rem;
+  }
+
+  .gallery{
+    display: grid;
+    grid-template-columns: 1fr;
+
+    margin-bottom: 1rem;
+  }
+
+  main h1{
+    font-size: 1.75rem;
+  }
+
+
+}
