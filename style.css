@@ -135,9 +135,13 @@ main h1{
   gap: 1.4rem;
 }
 
+/* Tentativa de pegar apenas um item */
+.gallery:nth-child(3){
+  background: red;
+  color: blue;
+}
+
 .item{
-  background: var(--color-base-white);
-  
   border-radius: 8px;
   
   display: flex;
@@ -164,6 +168,7 @@ main h1{
 
 .details{
   background: var(--color-base-white);
+  
   padding: 1.125rem;
 
   z-index: 1;
