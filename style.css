@@ -16,6 +16,7 @@
   --color-base-gray-300:#8D8D99;
   --color-base-gray-600:#3D3D3D;
   --color-base-gray-900: #202024;
+  --color-base-blue: #2C1CBE;
 }
 
 /* Corpo do projeto */
@@ -72,6 +73,12 @@ header form{
 
 header a img{
   border-radius: 50%;
+
+  transition: box-shadow 600ms;
+}
+
+header a img:hover{
+  box-shadow: 0px 0px 8px var(--color-base-blue);
 }
 
 .input-wrapper label{
@@ -100,6 +107,7 @@ header a img{
   padding-left: 2.5rem;
 
   opacity: 0.56;
+
 }
 
 .input-wrapper input::placeholder{
@@ -135,11 +143,39 @@ main h1{
   gap: 1.4rem;
 }
 
-/* Tentativa de pegar apenas um item */
-.gallery:nth-child(3){
-  background: red;
-  color: blue;
+
+/*Utilizamos esta parte para brincarmos com os filtros*/
+/*
+.item:nth-child(1) img{
+  filter: blur(50px);
 }
+.item:nth-child(2) img{
+  filter: brightness(100);
+}
+.item:nth-child(3) img{
+  filter: contrast(5);
+}
+.item:nth-child(4){
+  filter: drop-shadow(14px 14px 5px #2b2b36);
+}
+.item:nth-child(5) img{
+  filter: grayscale(1);
+}
+.item:nth-child(6) img{
+  filter: hue-rotate(90deg);
+}
+.item:nth-child(7) img{
+  filter: invert(1);
+}
+.item:nth-child(8) img{
+  filter: opacity(0.3);  
+}
+.item:nth-child(9) img{
+  filter: saturate(0.7);
+}
+.item:nth-child(10) img{
+  filter: sepia(1);
+} */
 
 .item{
   border-radius: 8px;
@@ -148,8 +184,22 @@ main h1{
   flex-direction: column;
   
   overflow: hidden;
-  
+  transition: 1s;
+
+  z-index: 1;
 }
+
+/* .item:hover{
+  
+  rotate: -8deg;
+  scale: 0.9;
+  translate: 2rem -1rem;
+  
+  z-index: 2;
+  
+  box-shadow: 4px 4px 8px var(--color-base-gray-300);
+}  */
+
 
 /* Acerta o tamanho da imagem e centraliza ela */
 .item img{
@@ -157,13 +207,14 @@ main h1{
   aspect-ratio: 16/9;
   object-fit: cover;
   
-  transition: 0.6s ease-out;
+  transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1) 0.3s;
 }
 
 /* CSS AVANÇADO - Filter */
 .item img:hover{
   filter: hue-rotate(7deg) contrast(102%) saturate(200%);
-  transform: scale(1.1);
+  rotate: -8deg;
+  scale: 0.9;
 }
 
 .details{
@@ -245,5 +296,10 @@ footer a{
     font-size: 1.75rem;
   }
 
+  .item:hover{
+    rotate: none;
+    scale: none;
+    translate: none;
+  }
 
 }
