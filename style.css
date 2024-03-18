@@ -1,3 +1,4 @@
+/* Começo confs */
 *{
   box-sizing: border-box;
 
@@ -198,7 +199,7 @@ main h1{
   z-index: 2;
   
   box-shadow: 4px 4px 8px var(--color-base-gray-300);
-}  */
+} */
 
 
 /* Acerta o tamanho da imagem e centraliza ela */
@@ -206,6 +207,8 @@ main h1{
   width: 100%;
   aspect-ratio: 16/9;
   object-fit: cover;
+
+  display: block;
   
   transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1) 0.3s;
 }
@@ -213,8 +216,8 @@ main h1{
 /* CSS AVANÇADO - Filter */
 .item img:hover{
   filter: hue-rotate(7deg) contrast(102%) saturate(200%);
-  rotate: -8deg;
-  scale: 0.9;
+  rotate: -2deg;
+  scale: 1.2;
 }
 
 .details{
@@ -249,13 +252,50 @@ main h1{
 
 footer{
   font-size: 1rem;
+  font-weight: normal;
   
   justify-content: center;
 }
 
 footer a{
   color: var(--color-base-gray-900);
+
+  font-weight: 600;
 }
+
+
+/* Fim Confs */
+
+/* Começo animações */
+
+header{
+  --startY: -100%;
+  animation: move .4s ease;
+}
+
+footer{
+  --startY: 100%;
+  animation: move .4s ease;
+}
+
+@keyframes move {
+  0%{
+    translate:0 var(--startY);
+  }
+}
+
+.item{
+  --delayCard: .4s;
+  animation: appear 2s var(--delayCard) backwards ease-out;
+}
+
+@keyframes appear {
+  0%{
+    opacity: 0;
+  }
+}
+
+/* Telas diferentes */
 
 @media (max-height: 1080px) {
   
